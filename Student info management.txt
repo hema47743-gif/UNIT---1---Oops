@@ -1,0 +1,58 @@
+import java.io.*;
+import java.util.*;
+import java.util.Scanner; 
+class Student{
+      String name;
+      String gender;
+      String department;
+      int age;
+      int year;
+      long phonenumber;
+   Student(String a, String b, String c, int d, int e, long f){
+          this.name = a;
+          this.gender = b;
+          this.department = c;
+          this.age = d;
+          this.year = e;
+          this.phonenumber = f;
+  }
+    void display(){
+    System.out.println("Student Details");
+    System.out.println("Name : " +name);
+    System.out.println("Age : " +age);
+    System.out.println("Gender : "+ gender);
+    System.out.println("Department : " + department);
+    System.out.println("Year : " + year);
+    System.out.println("Phonenumber : " + phonenumber);
+}
+}
+public class Solution{
+  public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+ System.out.println("Enter number of students: ");
+    int n = sc.nextInt();
+     sc.nextLine();
+    Student[] s = new Student[n];
+    for(int i=0;i<n;i++){
+       System.out.println("Enter details for Student " + (i + 1));
+            System.out.print("Enter the Name: ");
+            String name = sc.nextLine();
+            System.out.print("Enter the Gender: ");
+            String gender = sc.nextLine();
+            System.out.print("Enter the Department: ");
+            String department = sc.nextLine();
+            System.out.print("Enter the Age: ");
+            int age =  Integer.parseInt(sc.nextLine());
+            System.out.print("Enter the Year: ");
+            int year =  Integer.parseInt(sc.nextLine());
+            System.out.print("Enter the Phone Number: ");
+            long phonenumber = Long.parseLong(sc.nextLine());
+            s[i] = new Student(name, gender, department, age, year, phonenumber);
+        }
+         System.out.println(" Student Information ");
+        for (int i = 0; i < n; i++) {
+            s[i].display();
+        }
+        sc.close();
+    }
+}
